@@ -1,0 +1,347 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2. 初始化编辑器 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03-useObservable.html" />
+    
+    
+    <link rel="prev" href="01-destination.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01-destination.html">
+            
+                <a href="01-destination.html">
+            
+                    
+                    1. 目标
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="02-initialize.html">
+            
+                <a href="02-initialize.html">
+            
+                    
+                    2. 初始化编辑器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03-useObservable.html">
+            
+                <a href="03-useObservable.html">
+            
+                    
+                    3. 使用 RxJS 与 Hooks 管理状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04-useEventObservable.html">
+            
+                <a href="04-useEventObservable.html">
+            
+                    
+                    4. 使用 RxJS 与 Hooks 管理事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05-cursor-blink.html">
+            
+                <a href="05-cursor-blink.html">
+            
+                    
+                    5. 光标闪动
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2. 初始化编辑器</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x521B;&#x5EFA;&#x7F16;&#x8F91;&#x5668;">&#x521B;&#x5EFA;&#x7F16;&#x8F91;&#x5668;</h1>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#xFF08;&#x5927;&#x5BB6;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF; CodeMirror &#x7684;&#x5B9E;&#x73B0;&#xFF09;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x7531;&#x4E0B;&#x9762;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li><strong>&#x6587;&#x672C;&#x5757;</strong>&#xFF1A;&#x5C55;&#x793A;&#x4EE3;&#x7801;&#xFF0C;&#x884C;&#x53F7;&#x7B49;</li>
+<li><strong>&#x5149;&#x6807;</strong></li>
+<li><strong>&#x8F93;&#x5165;&#x6846;</strong></li>
+</ul>
+<p><img src="images/02-structure.png" alt=""></p>
+<p>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x8F93;&#x5165;&#x6846;&#x952E;&#x5165;&#x5185;&#x5BB9;&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#xFF1A;</p>
+<ul>
+<li>&#x66F4;&#x65B0;&#x5149;&#x6807;&#x4F4D;&#x7F6E;</li>
+<li>&#x5237;&#x65B0;&#x6587;&#x672C;&#xFF08;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x91CC;&#x662F;&#x4EE3;&#x7801;&#x5757;&#xFF09;&#xFF0C;&#x6587;&#x672C;&#x6309;&#x884C;&#x62C6;&#x5206;</li>
+<li>&#x5237;&#x65B0;&#x8F93;&#x5165;&#x6846;&#x4F4D;&#x7F6E;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x611F;&#x89C9;&#x4E0D;&#x5230;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x8F93;&#x5165;&#x6846;&#xFF0C;&#x800C;&#x662F;&#x5C31;&#x50CF;&#x5728;&#x6587;&#x672C;&#x4E0A;&#x8FFD;&#x52A0;&#x5185;&#x5BB9;&#x4E00;&#x6837;</li>
+</ul>
+<p>&#x7EFC;&#x4E0A;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x7F16;&#x8F91;&#x5668;&#x62C6;&#x5206;&#x4E3A;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>&#x6587;&#x672C;&#x7EC4;&#x4EF6; <strong>Code</strong></li>
+<li>&#x5149;&#x6807;&#x7EC4;&#x4EF6; <strong>Cursor</strong></li>
+<li>&#x8F93;&#x5165;&#x6846;&#x7EC4;&#x4EF6; <strong>Input</strong></li>
+</ul>
+<h2 id="&#x6587;&#x672C;&#x7EC4;&#x4EF6;&#xFF1A;code">&#x6587;&#x672C;&#x7EC4;&#x4EF6;&#xFF1A;Code</h2>
+<p>&#x6587;&#x672C;&#x7EC4;&#x4EF6;&#x542B;&#x6709;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><p>&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x884C;</p>
+</li>
+<li><p>&#x5F53;&#x524D;&#x884C;</p>
+<p><img src="codes/02-1.png" alt=""></p>
+</li>
+</ul>
+<h2 id="&#x5149;&#x6807;&#x7EC4;&#x4EF6;&#xFF1A;cursor">&#x5149;&#x6807;&#x7EC4;&#x4EF6;&#xFF1A;Cursor</h2>
+<p>&#x5149;&#x6807;&#x7EC4;&#x4EF6;&#x5305;&#x542B;&#x4E86;&#x5F53;&#x524D;&#x5149;&#x6807;&#x7684;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<p><img src="codes/02-2.png" alt=""></p>
+<h2 id="&#x8F93;&#x5165;&#x7EC4;&#x4EF6;&#xFF1A;input">&#x8F93;&#x5165;&#x7EC4;&#x4EF6;&#xFF1A;Input</h2>
+<p>&#x8F93;&#x5165;&#x7EC4;&#x4EF6;&#x5219;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li>&#x8F93;&#x5165;&#x6846;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;</li>
+<li>&#x5F53;&#x524D;&#x8F93;&#x5165;&#x503C;</li>
+<li>onChange &#x4E8B;&#x4EF6;</li>
+</ul>
+<p><img src="codes/02-3.png" alt=""></p>
+<h2 id="&#x7F16;&#x8F91;&#x5668;&#xFF1A;editor">&#x7F16;&#x8F91;&#x5668;&#xFF1A;Editor</h2>
+<p>&#x7EC4;&#x5408;&#x8FD9;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6;&#xFF0C;&#x5C31;&#x5F97;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x7F16;&#x8F91;&#x5668; Editor&#xFF1A;</p>
+<p><img src="codes/02-4.png" alt=""></p>
+<p>&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x5C1D;&#x8BD5;&#x8F93;&#x5165; <code>SELECT * FROM USERS</code>&#xFF0C;&#x4F60;&#x5C06;&#x80FD;&#x770B;&#x5230;&#xFF1A;</p>
+<p><img src="images/02-initialize.png" alt=""></p>
+<p>&#x8FD9;&#x57FA;&#x672C;&#x662F;&#x4E00;&#x4E2A;&#x6BEB;&#x65E0;&#x5375;&#x7528;&#x7684;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x5149;&#x6807;&#x65E0;&#x6CD5;&#x8DDF;&#x968F;&#xFF0C;&#x65E0;&#x6CD5;&#x54CD;&#x5E94;&#x6362;&#x884C;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;&#x7B49;&#x7B49;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x901A;&#x8FC7;   RxJS &#x4E0E; Hooks &#x4E00;&#x6B65;&#x6B65;&#x5B8C;&#x5584;&#x5B83;&#x3002;</p>
+<blockquote>
+<p>&#x672C;&#x8282;&#x7684;&#x4EE3;&#x7801;&#x548C;&#x793A;&#x4F8B;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x67E5;&#x770B;&#xFF1A;<a href="https://codesandbox.io/s/z6w2v1jvmx" target="_blank">https://codesandbox.io/s/z6w2v1jvmx</a></p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01-destination.html" class="navigation navigation-prev " aria-label="Previous page: 1. 目标">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03-useObservable.html" class="navigation navigation-next " aria-label="Next page: 3. 使用 RxJS 与 Hooks 管理状态">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2. 初始化编辑器","level":"1.3","depth":1,"next":{"title":"3. 使用 RxJS 与 Hooks 管理状态","level":"1.4","depth":1,"path":"03-useObservable.md","ref":"03-useObservable.md","articles":[]},"previous":{"title":"1. 目标","level":"1.2","depth":1,"path":"01-destination.md","ref":"01-destination.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"02-initialize.md","mtime":"2019-03-24T17:03:45.256Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-24T16:09:27.357Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
